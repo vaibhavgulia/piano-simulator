@@ -70,6 +70,8 @@ requestAnimationFrame(function render(t) {
   renderer.render({ scene: mesh });
   requestAnimationFrame(render);
 });
+
+// Piano Code
 const AudioContext = window.AudioContext || window.webkitAudioContext;
 const ctx = new AudioContext();
 

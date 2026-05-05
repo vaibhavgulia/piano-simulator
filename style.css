@@ -1,14 +1,13 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-  margin: 0;
-  min-height: 100vh;
+  background: #0f0c29;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 100vh;
   font-family: sans-serif;
-  background: #0f0c29;
   overflow: hidden;
 }
 
@@ -31,14 +30,14 @@ body {
   width: 600px; height: 600px;
   background: #5227FF;
   top: -100px; left: -100px;
-  animation-duration: 5s;
+  animation-duration: 4s;
 }
 
 .aurora span:nth-child(2) {
   width: 500px; height: 500px;
   background: #7cff67;
   top: 50%; left: 40%;
-  animation-duration: 4s;
+  animation-duration: 5s;
 }
 
 .aurora span:nth-child(3) {
@@ -53,6 +52,14 @@ body {
   100% { transform: translate(100px, 80px) scale(1.2); }
 }
 
+#ripple-canvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
 h1 {
   color: white;
   margin-bottom: 40px;
@@ -60,53 +67,44 @@ h1 {
   letter-spacing: 4px;
   text-shadow: 0 0 20px #a855f7;
   position: relative;
-  z-index: 1;
+  z-index: 10;
 }
 
 .keyboard {
   display: flex;
   position: relative;
-  z-index: 1;
-}
-
-h1 { color: white; margin-bottom: 40px; }
-
-.keyboard {
-  display: flex;
-  position: relative;
+  z-index: 10;
 }
 
 .key.white {
   width: 60px;
   height: 200px;
-  background: white;
+  background: linear-gradient(180deg, #ffffff, #e0e0e0);
   border: 1px solid #333;
-  border-radius: 0 0 8px 8px;
+  border-radius: 0 0 10px 10px;
   cursor: pointer;
+  box-shadow: 2px 4px 8px rgba(0,0,0,0.4);
+  transition: background 0.1s;
 }
 
 .key.white:hover, .key.white.active {
-  background: #ffe066;
-}
-
-#ripple-canvas {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  z-index: 0;
-  pointer-events: none;
+  background: linear-gradient(180deg, #ffe066, #ffcc00);
+  box-shadow: 0 0 15px #ffe066;
 }
 
 .key.black {
   width: 36px;
   height: 120px;
-  background: #222;
-  position: absolute;
-  border-radius: 0 0 6px 6px;
+  background: linear-gradient(180deg, #222, #000);
+  border-radius: 0 0 8px 8px;
   cursor: pointer;
-  z-index: 1;
+  z-index: 11;
+  position: absolute;
+  box-shadow: 2px 4px 8px rgba(0,0,0,0.6);
+  transition: background 0.1s;
 }
 
 .key.black:hover, .key.black.active {
-  background: #555;
+  background: linear-gradient(180deg, #555, #333);
+  box-shadow: 0 0 12px #a855f7;
 }
