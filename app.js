@@ -36,17 +36,18 @@ window.addEventListener('DOMContentLoaded', () => {
   const blackPositions = [0, 1, 3, 4, 5];
 
   whiteKeys.forEach((note, i) => {
-    const key = document.createElement('div');
-    key.classList.add('key', 'white');
-    key.dataset.freq = note.freq;
-    key.dataset.key = note.key;
-    key.addEventListener('mousedown', () => {
-      playNote(note.freq);
-      key.classList.add('active');
-    });
-    key.addEventListener('mouseup', () => key.classList.remove('active'));
-    keyboard.appendChild(key);
+  const key = document.createElement('div');
+  key.classList.add('key', 'white');
+  key.dataset.freq = note.freq;
+  key.dataset.key = note.key;
+  key.innerHTML = `<span class="key-label">${note.note.replace(/\d/g, '')}</span>`;
+  key.addEventListener('mousedown', () => {
+    playNote(note.freq);
+    key.classList.add('active');
   });
+  key.addEventListener('mouseup', () => key.classList.remove('active'));
+  keyboard.appendChild(key);
+});
 
   blackKeys.forEach((note, i) => {
     const key = document.createElement('div');

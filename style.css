@@ -108,3 +108,17 @@ h1 {
   background: linear-gradient(180deg, #555, #333);
   box-shadow: 0 0 12px #a855f7;
 }
+.key.white {
+  position: relative;
+}
+
+.key-label {
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+  font-size: 13px;
+  color: #888;
+  font-weight: bold;
+  pointer-events: none;
+}
