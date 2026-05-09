@@ -34,4 +34,4 @@ Fully responsive and hosted on GitHub Pages
 - JavaScript (Web Audio API)
 - Hosted on GitHub Pages
 
-Vaibhav Gulia - 220 - Section D
+Vaibhav Gulia and varshil sharma - 220 and 224 - Section D
